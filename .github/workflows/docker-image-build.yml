@@ -3,10 +3,10 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -27,9 +27,9 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t <your-dockerhub-username>/docx-to-pdf-app:latest .
+          docker build -t lavish85/docx-to-pdf-app:latest .
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push <your-dockerhub-username>/docx-to-pdf-app:latest
+          docker push lavish85/docx-to-pdf-app:latest
