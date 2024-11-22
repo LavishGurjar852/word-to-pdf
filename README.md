@@ -58,10 +58,9 @@ cd word-to-pdf
    ./run.sh
    ```
 This script will:
-
-Check if the Docker image is built.
-If not, it will build the Docker image.
-Run the Docker container exposing port 3000.
+-Check if the Docker image is built.
+- If not, it will build the Docker image.
+- Run the Docker container exposing port 3000.
 Once the container is running, you can access the application via http://localhost:3000.
 
 #### **Option 2: Manually Build the Docker Image
@@ -72,7 +71,7 @@ docker build -t lavish85/docx-to-pdf-app .
 ```
 After the image is built, you can run the container with:
 
-bash
-Copy code
+```bash
 docker run -p 3000:3000 lavish85/docx-to-pdf-app
+```
 This will expose the application at http://localhost:3000.
