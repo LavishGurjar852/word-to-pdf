@@ -16,9 +16,9 @@ This is a **Node.js-based web application** that allows users to upload DOCX fil
 
 Before running this application, ensure that you have the following tools installed:
 
-- **Docker**: Install Docker to run the containerized application. You can download Docker from [Docker's official website](https://www.docker.com/get-started).
-- **Git**: Git is needed to clone the repository and manage the codebase. You can install Git from [here](https://git-scm.com/).
-- **Node.js (optional for development)**: Install Node.js if you plan to modify the server-side code. You can download it from [here](https://nodejs.org/).
+- **Docker**: Install Docker to run the containerized application. You can download Docker from [Docker's official website](https://www.docker.com/).
+- **Git**: Git is needed to clone the repository and manage the codebase. You can install Git from [here](https://git-scm.com/downloads).
+- **Node.js (optional for development)**: Install Node.js if you plan to modify the server-side code. You can download it from [here](lo).
 
 ---
 
@@ -83,3 +83,62 @@ Once the application is running:
 2. Upload a DOCX file that you want to convert.
 3. Set a password for the resulting PDF file.
 4. Download the converted PDF file.
+
+## GitHub Actions CI/CD
+
+This project is integrated with **GitHub Actions** to automate the build and deployment process of the Docker image to Docker Hub.
+
+### How It Works
+The GitHub Actions workflow file is located at `.github/workflows/docker-image-build.yml`. Here's a summary of the workflow steps:
+
+1. **Checkout Code**: The workflow checks out the code from the repository.
+2. **Log in to Docker Hub**: It logs in to Docker Hub using credentials stored as GitHub secrets (`DOCKER_USERNAME` and `DOCKER_PASSWORD`).
+3. **Build Docker Image**: It builds the Docker image using the `Dockerfile` in the repository.
+4. **Push Image to Docker Hub**: After building the image, the workflow pushes it to Docker Hub under the `lavish85/docx-to-pdf-app:latest` tag.
+
+This allows you to easily deploy and share the Docker image with others.
+
+## File Structure
+
+Here is an overview of the file structure of the project:
+
+```bash
+/word-to-pdf
+├── .github
+│   └── workflows
+│       └── docker-image-build.yml  # GitHub Actions workflow to build Docker image
+├── Dockerfile                      # Instructions for building the Docker image
+├── app.js                          # Main application logic (Node.js server)
+├── package.json                    # Node.js dependencies and scripts
+├── run.sh                          # Bash script to build and run the container
+├── README.md                       # Documentation for the project
+├── temp                            # Temporary files directory
+├── public
+│   └── css
+│       └── styles.css              # General stylesheet
+│       └── result-style.css        # Stylesheet for result page
+├── views
+│   └── index.ejs                   # EJS template for the main page
+│   └── result.ejs                  # EJS template for the result page
+```
+
+## Troubleshooting
+
+### Docker Build Issues
+If you run into issues building the Docker image:
+- Ensure that you have an active internet connection.
+- Verify that Docker is installed and running properly on your machine.
+
+### Container Not Starting
+To identify any issues with the container, check the Docker logs:
+
+```bash
+docker logs <container_id>
+```
+
+### Accessing the Application
+
+If the web application is not accessible at [http://localhost:3000](http://localhost:3000):
+
+- Ensure that the port is correctly mapped in the Docker run command.
+- Check for any firewall restrictions that might block access.
