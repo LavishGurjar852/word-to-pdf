@@ -46,6 +46,7 @@ Clone this repository to your local machine using Git:
 git clone https://github.com/LavishGurjar852/word-to-pdf.git
 cd word-to-pdf
 
+```
 ### Step 2: Dockerize the Application
 
 #### **Option 1: Run the Application Using Docker**
