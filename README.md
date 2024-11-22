@@ -63,7 +63,7 @@ This script will:
 - Run the Docker container exposing port 3000.
 Once the container is running, you can access the application via http://localhost:3000.
 
-#### **Option 2: Manually Build the Docker Image
+#### **Option 2: Manually Build the Docker Image**
 If you haven't built the Docker image yet, you can manually build it using the following command:
 
   ```bash
@@ -75,3 +75,11 @@ After the image is built, you can run the container with:
 docker run -p 3000:3000 lavish85/docx-to-pdf-app
 ```
 This will expose the application at http://localhost:3000.
+
+### Step 3: Upload a DOCX File and Convert
+Once the application is running:
+
+1. Open a web browser and visit http://localhost:3000.
+2. Upload a DOCX file that you want to convert.
+3. Set a password for the resulting PDF file.
+4. Download the converted PDF file.
