@@ -45,3 +45,13 @@ Clone this repository to your local machine using Git:
 ```bash
 git clone https://github.com/LavishGurjar852/word-to-pdf.git
 cd word-to-pdf
+
+### Step 2: Dockerize the Application
+
+#### **Option 1: Run the Application Using Docker**
+
+1. Ensure Docker is installed and running on your machine.
+2. Run the container using the `run.sh` script:
+
+   ```bash
+   ./run.sh
