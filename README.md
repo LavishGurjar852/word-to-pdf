@@ -22,6 +22,18 @@ Before running this application, ensure that you have the following tools instal
 
 ---
 
+## Technologies Used
+
+- **Node.js**: Backend runtime to handle file uploads and interact with LibreOffice for DOCX to PDF conversion.
+- **Express**: Lightweight Node.js framework for handling HTTP requests and serving the web interface.
+- **LibreOffice**: Used to perform the DOCX to PDF conversion.
+- **qPDF**: Used for password protection of the generated PDFs.
+- **Docker**: Containerization of the application, ensuring consistency across environments and simplifying deployment.
+- **GitHub Actions**: Continuous Integration and Continuous Deployment (CI/CD) pipeline to automate the building and pushing of the Docker image.
+- **HTML/CSS**: Simple frontend for users to interact with the application.
+
+---
+
 ## Getting Started
 
 Follow these steps to get the application up and running on your local machine.
