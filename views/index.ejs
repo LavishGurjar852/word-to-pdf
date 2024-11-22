@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOCX to PDF Converter</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">DOCX to PDF Converter</h1>
+  </header>
+  
+  <section class="hero">
+    <div class="container">
+      <h2>Convert Your DOCX Files to PDF with Ease</h2>
+      <form action="/convert" method="POST" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="docxFile" accept=".docx" required class="upload-input">
+        
+        <label class="toggle-switch">
+          <input type="checkbox" name="passwordProtection" id="passwordProtection">
+          <span class="slider"></span>
+        </label>
+        <span>Password Protect PDF?</span>
+
+        <div id="passwordInput">
+          <label for="password">Enter Password:</label>
+          <div style="position: relative;">
+            <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Enter Password" 
+              class="upload-input">
+            <i 
+              id="togglePassword" 
+              class="eye-icon">
+              👁️
+            </i>
+          </div>
+        </div>
+
+        <button type="submit" class="upload-btn">Convert Now</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 DOCX to PDF Converter | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const passwordCheckbox = document.getElementById('passwordProtection');
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordField = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+
+    passwordCheckbox.addEventListener('change', () => {
+      passwordInput.style.display = passwordCheckbox.checked ? 'block' : 'none';
+    });
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordField.type === 'password' ? 'text' : 'password';
+      passwordField.type = type;
+      togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+    });
+  </script>
+</body>
+</html>
+

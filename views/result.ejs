@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion Result</title>
+  <link rel="stylesheet" href="/css/result_style.css">
+  <script>
+    function handleDownload(url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = ''; // Let the server provide the default filename
+      link.click();
+
+      // Redirect after a short delay
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1000);
+    }
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">DOCX to PDF Converter</h1>
+  </header>
+  
+  <section class="result-section">
+    <div class="container">
+      <h2>Conversion Successful!</h2>
+      <p><strong>Original File:</strong> <%= metadata.originalName %></p>
+      <p><strong>Size:</strong> <%= metadata.size %> bytes</p>
+      <p><strong>Creation Date:</strong> <%= metadata.creationDate %></p>
+      <button onclick="handleDownload('<%= downloadUrl %>')" class="download-btn">Download PDF</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 DOCX to PDF Converter | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
